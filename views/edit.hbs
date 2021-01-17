@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Amarante' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Charm' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@300&display=swap" rel="stylesheet">
+    <title>i-NIMC</title>
+</head>
+      
+<body>
+    <div id="body">
+    <div id="body_register">
+<header id="hed1">
+    <div id="idname">
+        <p id="pname"><span>i</span>-NIMC <i class="fa fa-check"></i><span class="nimc_header">National Identity Management Commission</span></p>
+        <span><i class="fa fa-bars" id="bars"></i></span>
+    </div>
+    <div class="search_cla">
+      <input type="search" class="search_i" placeholder="search...">
+      <label for="search"><i class="fa fa-search i_search"></i></label>
+      <input type="submit" id="search">
+    </div>
+       <nav class ="nav active" id="nav_1">
+           <a href="/" class = "a_nav">Home</a>
+           <a href="register" class = "a_nav">Register</a>
+           <a href="card" class = "a_nav">Card</a>
+           <a href="print.hbs" class = "a_nav">FAQ</a>
+           <a href="print.html" class = "a_nav">About-Us</a>
+        </nav>
+</header>
+<div class="body_3">
+  <div class="policy_fm" id="policy_fm">
+    <h3>Important Notice!!!</h3>
+    <p>Only Admin has authority to <strong><em>EDIT USER DETAILS</em></strong> Via this Page. By Clicking <em style="background-color: white; color:black">ACCEPT</em> you have confirmed yourself to be an Admin, otherwise click <em style="background-color: WHITE; color: black">DECLINE</em> </p>
+    <div class="btn_acc_dec">
+    <a id="btn_decline" class="btn btn-danger btn_fm" href="/">Decline</a>
+    <button id="btn_accept" class="btn btn-success btn_fm">Accept</button>
+  </div>
+  </div>
+  <form action= 'register' method="POST" class="fm_reg active_fm" id="active_fm" enctype="multipart/form-data">
+  <input type="hidden" name="_id" id="" value="{{nimcvalue._id}}">
+  <h1 class="frmh1">{{viewTitle}}</h1>
+  <h3 class="frmh1 btn btn-success">{{viewTitle2}}</h3>
+  <div class="upload">
+    <img src="{{nimcvalue.avatar}}" placeholder ="Upload Image">
+    <label for="upload" class ="uploadfrm"><i class="fa fa-upload"></i> Passport</label>
+    <input type="file" id="upload" onchange="previewFile()" name="picture" style="display: none;">
+  </div>
+      <h3 class="hd_fm">Names<span style="color: red;">*</span></h3>
+      <div class="form_names">
+              <div class="inline_para">
+                  <input type="text" name="fname" class="form_1" placeholder="first name" id="fNam_frm" value="{{nimcvalue.FirstName}}">
+                  <p id="p1" class="p_fm"></p>
+              </div>
+            <div class="inline_para">
+                  <input type="text" name="lname" class="form_1" placeholder="last name" id="lNam_frm" value="{{nimcvalue.LastName}}">
+                  <p id="p2" class="p_fm"></p>
+            </div>
+            <div class="inline_para">
+                  <input type="text" name="mname" class="form_1" placeholder="middle name" id="mNam_frm" value="{{nimcvalue.MiddleName}}">
+                  <p id="p3" class="p_fm"></p>
+            </div>
+            <div class="inline_para">
+                  <input type="tel" name="tel" class="form_1" placeholder="Phone No" value="{{nimcvalue.Phone}}">
+                  <p id="p3" class="p_fm"></p>
+            </div>
+            <div class="inline_para">
+                  <input type="email" name="email" class="form_1" placeholder="E-mail" value="{{nimcvalue.Email}}">
+                  <p id="p3" class="p_fm"></p>
+            </div>
+    </div>
+  
+  <h3 class="hd_fm">Gender<span style="color: red;">*</span></h3>
+        <div class="form_2">
+                  <label for="male" class="fm_gen"><i class="fa fa-male fm_gen"></i> Male:</label>
+                  <input type="radio" name ="gender" id="male" value="Male">
+                  <label for="female" class="fm_gen"><i class="fa fa-female"></i>Female:</label>
+                  <input type="radio" name ="gender" id="female" value="Female">
+                  <label for="others" class="fm_gen">Others</label>
+                  <input type="radio" name ="gender" id="others" value="Others">
+        </div>
+  <h3 class="hd_fm">Marital Status<span style="color: red;">*</span></h3>
+         <div class="form_2">
+                  <label for="married" class="fm_gen"> Married:</label>
+                  <input type="radio" name ="maristat" id="married" value="Married">
+                  <label for="single" class="fm_gen">Single:</label>
+                  <input type="radio" name ="maristat" id="single" value="Single">
+                  <label for="divorced" class="fm_gen">Divorced:</label>
+                  <input type="radio" name ="maristat" id="divorced" value="Divorced">
+          </div>
+    <h3 class="hd_fm">Occupation<span style="color: red;">*</span></h3>
+         <div class="form_2">
+                  <label for="employed" class="fm_gen">Employed:</label>
+                  <input type="radio" name ="occupation" id="employed" value="Employed">
+                  <label for="unemployed" class="fm_gen">Unemployed:</label>
+                  <input type="radio" name ="occupation" id="unemployed" value="Unemployed">
+                  <label for="specify" class="fm_gen">Business:</label>
+                  <input type="radio" name ="occupation" id="specify" value="Business">
+          </div>
+  <div class="form_3">
+    <h3 class="hd_fm">Location <span style="color: red;">*</span></h3>
+    <div class="select">
+      <select name="nationality" id="nat" class="sel_opt">
+            <option value="Nationality">Nationality</option>
+            <option value="Nigeria" name="nigeria">Nigeria</option>
+      </select>
+
+    <select name="state" id="val_sta" class="sel_opt" value="{{nimcvalue.State}}">
+            <option value="State" class="statefrm">State</option>
+    </select>
+    <p id="p32"></p>
+    <select name="lga" id="lga" class="sel_opt" value="{{nimcvalue.LGA}}">
+      <option value="LGA">LGA</option>
+
+    </select>
+<div class="addr">
+  <textarea name="addr1" id="" cols="50" rows="3" placeholder="Home Address 1">{{nimcvalue.Addr1}}</textarea>
+</div>
+<div class="addr">
+  <textarea name="addr2" id="" cols="50" rows="3" placeholder="Home Address 2">{{nimcvalue.Addr2}}</textarea>
+</div>
+  </div>
+    
+    <h3 class="hd_fm">D.O.B<span style="color: red;">*</span></h3>
+    <input type="date" name="dob" value="{{nimcvalue.DOB}}">
+  </div>
+  <h3 class="hd_fm">BG/GT<span style="color: red;">*</span></h3>
+  <div class="form_1">
+    <div class="inline_para">
+      <select name="gt" id="gtfrm"value="{{nimcvalue.GT}}">
+          <option value="">Genotype</option>
+          <option value="AA">AA</option>
+          <option value="AS">AS</option>
+          <option value="SS">SS</option>
+          <option value="AC">AC</option>
+      </select>
+      <p id="p3" class="p_fm"></p>
+</div>
+<div class="inline_para">
+  <select name="bg" id="bgfrm" value="{{nimcvalue.BG}}">
+          <option value="">Blood Group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+  </select>
+  <p id="p3" class="p_fm"></p>
+</div>
+  <input type="text" id="randno" name="unique_id" hidden>
+  </div>
+  <div class="submit">
+      <a href = "edit" class="btn btn-success" value="Register" id="randreg">Update</a>
+  </div>
+  </form>
+</div>
+</div>
+
+
+
+<footer class="footer_1">
+  <div class="footer_ele">
+    <h3 class="footer_h3">Our Partners</h3>
+    <img src="../pht/partners.jpg" alt="Partners" class="img_footer_part">
+  </div>
+  <div id="id_footer">
+    <p id="pname_footer"><span>i</span>-NIMC <i class="fa fa-check"></i></p>
+</div>
+<div class="id_footer_2">
+  <div class="footer_url1">
+    <h3 class="footer_url_h3">About</h3>
+    <a href="#">NIMC</a>
+    <a href="#">ID Generation</a>
+    <a href="#">Use Of Card</a>
+    <a href="#">Importance</a>
+  </div>
+  <div class="footer_url1">
+    <h3 class="footer_url_h3">Contact-Us</h3>
+    <a href="#">Leave A Message</a>
+    <a href="#">Suggestion</a>
+    <a href="#">DG NIMC</a>
+    <a href="#">Other Site</a>
+    <a href="#">Chat With A Bot</a>
+    <a href="#">Description</a>
+  </div>
+  <div class="footer_url1">
+    <h3 class="footer_url_h3">Partners</h3>
+    <a href="#">Federal Inland Revenue Service (FIRS)</a>
+    <a href="#">Nigeria Imigration Service (NIS)</a>
+    <a href="#">Joint Admission and Matriculation Board (JAMB)</a>
+    <a href="#">Corprate Affairs Commission (CAC)</a>
+    <a href="#">The Nigeria Police (NPF)</a>
+  </div>
+  <div class="footer_url1">
+    <h3 class="footer_url_h3">Help Lines</h3>
+    <p>08022345679</p>
+    <p>08022345670</p>
+    <p>08052345679</p>
+    <p>08052345670</p>
+    <p>08032345679</p>
+    <p>09032345670</p>
+  </div>
+</div>
+</div>
+    
+  </footer>
+    <script src="../jscript/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

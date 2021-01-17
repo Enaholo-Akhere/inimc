@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Contrail One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Amarante' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Charm' rel='stylesheet'>
+    <title>i-NIMC</title>
+</head>
+<body>
+    <div id="body">
+<header id="hed1">
+    <div id="idname">
+        <p id="pname"><span>i</span>-NIMC <i class="fa fa-check"></i><span class="nimc_header">National Identity Management Commission</span></p>
+        <span><i class="fa fa-bars" id="bars"></i></span>
+    </div>
+    <div class="search_cla">
+      <input type="search" class="search_i" placeholder="search...">
+      <label for="search"><i class="fa fa-search i_search"></i></label>
+      <input type="submit" id="search">
+    </div>
+       <nav class ="nav active" id="nav_1">
+           <a href="index" class = "a_nav">Home</a>
+           <a href="register" class = "a_nav">Register</a>
+           <a href="card" class = "a_nav">Card</a>
+           <a href="print.html" class = "a_nav">FAQ</a>
+           <a href="print.html" class = "a_nav">About-Us</a>
+        </nav>
+</header>
+       
+<h1 class="h1">{{viewTitle}}</h1>
+<h3 class="h1"><a href="adduser" class="btn btn-secondary">ADD NEW<i class="fa fa-plus"></i></a></h3>
+<div class="tablediv">
+<table class="list_reg table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Middle Name</th>
+        <th>Phone</th>
+        <th>E-mail</th>
+        <th>State</th>
+        <th>LGA</th>
+        <th>Gender</th>
+        <th>Occupation</th>
+        <th>M.Status</th>
+        <th>Addr</th>
+        <th>DOB</th>
+        <th>Unique No</th>
+        <th>Passport</th>
+        <th></th>
+      </tr>
+    </thead>
+  
+      {{#each list}}
+      <tr>
+        <td></td>
+        <td>{{this.FirstName}}</td>
+        <td>{{this.LastName}}</td>
+        <td>{{this.MiddleName}}</td>
+        <td>{{this.Phone}}</td>
+        <td>{{this.Email}}</td>
+        <td>{{this.State}}</td>
+        <td>{{this.LGA}}</td>
+        <td>{{this.Gender}}</td>
+        <td>{{this.Occupation}}</td>
+        <td>{{this.MaritalStatus}}</td>
+        <td>{{this.Addr1}}</td>
+        <td>{{this.DOB}}</td>
+        <td>{{this.unique_id}}</td>
+        <td><a href="details" target="_blank"><img src="{{this.avatar}}" alt="" style="width:50px; heigth:50px;"></a></td>
+        <td>
+          <a href="{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden= "true"></i></a>
+          <a href="delete/{{this._id}}"><i class="fa fa-trash fa-lg" aria-hidden= "true" onclick="return confirm('are you sure you want to delete the record?');"></i></a>
+        </td>
+      </tr>
+      {{/each}}
+</table>
+</div>
+
+
+    <footer class="footer_1">
+    <div class="footer_ele">
+      <h3 class="footer_h3">Our Partners</h3>
+      <img src="../pht/partners.jpg" alt="Partners" class="img_footer_part">
+    </div>
+    <div id="id_footer">
+      <p id="pname_footer"><span>i</span>-NIMC <i class="fa fa-check"></i></p>
+  </div>
+  <div class="id_footer_2">
+    <div class="footer_url1">
+      <h3 class="footer_url_h3">About</h3>
+      <a href="#">NIMC</a>
+      <a href="#">ID Generation</a>
+      <a href="#">Use Of Card</a>
+      <a href="#">Importance</a>
+    </div>
+    <div class="footer_url1">
+      <h3 class="footer_url_h3">Contact-Us</h3>
+      <a href="#">Leave A Message</a>
+      <a href="#">Suggestion</a>
+      <a href="#">DG NIMC</a>
+      <a href="#">Other Site</a>
+      <a href="#">Chat With A Bot</a>
+      <a href="#">Description</a>
+    </div>
+    <div class="footer_url1">
+      <h3 class="footer_url_h3">Partners</h3>
+      <a href="#">Federal Inland Revenue Service (FIRS)</a>
+      <a href="#">Nigeria Imigration Service (NIS)</a>
+      <a href="#">Joint Admission and Matriculation Board (JAMB)</a>
+      <a href="#">Corprate Affairs Commission (CAC)</a>
+      <a href="#">The Nigeria Police (NPF)</a>
+    </div>
+    <div class="footer_url1">
+      <h3 class="footer_url_h3">Help Lines</h3>
+      <p>08022345679</p>
+      <p>08022345670</p>
+      <p>08052345679</p>
+      <p>08052345670</p>
+      <p>08032345679</p>
+      <p>09032345670</p>
+    </div>
+  </div>
+  </div>
+      
+    </footer>
+    
+    <script src="../jscript/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
