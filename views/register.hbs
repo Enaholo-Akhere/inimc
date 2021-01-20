@@ -65,12 +65,12 @@
                   <p id="p3" class="p_fm"></p>
             </div>
             <div class="inline_para">
-                  <input type="tel" name="tel" class="form_1" placeholder="Phone No">
-                  <p id="p3" class="p_fm"></p>
+                  <input type="tel" name="tel" class="form_1" placeholder="Phone No" id="phone">
+                  <p id="p4" class="p_fm"></p>
             </div>
             <div class="inline_para">
-                  <input type="email" name="email" class="form_1" placeholder="E-mail">
-                  <p id="p3" class="p_fm"></p>
+                  <input type="text" name="email" class="form_1" placeholder="E-mail" id="email">
+                  <p id="p5" class="p_fm"></p>
             </div>
     </div>
   
@@ -82,6 +82,7 @@
                   <input type="radio" name ="gender" id="female" value="Female">
                   <label for="others" class="fm_gen">Others</label>
                   <input type="radio" name ="gender" id="others" value="Others">
+                  <p id="p6" class="p_fm"></p>
         </div>
   <h3 class="hd_fm">Marital Status<span style="color: red;">*</span></h3>
          <div class="form_2">
@@ -91,6 +92,7 @@
                   <input type="radio" name ="maristat" id="single" value="Single">
                   <label for="divorced" class="fm_gen">Divorced:</label>
                   <input type="radio" name ="maristat" id="divorced" value="Divorced">
+                  <p id="p7" class="p_fm"></p>
           </div>
     <h3 class="hd_fm">Occupation<span style="color: red;">*</span></h3>
          <div class="form_2">
@@ -100,33 +102,38 @@
                   <input type="radio" name ="occupation" id="unemployed" value="Unemployed">
                   <label for="specify" class="fm_gen">Business:</label>
                   <input type="radio" name ="occupation" id="specify" value="Business">
+                  <p id="p8" class="p_fm"></p>
           </div>
   <div class="form_3">
     <h3 class="hd_fm">Location <span style="color: red;">*</span></h3>
     <div class="select">
       <select name="nationality" id="nat" class="sel_opt">
-            <option value="Nationality">Nationality</option>
+            <option value="">Nationality</option>
             <option value="Nigeria" name="nigeria">Nigeria</option>
       </select>
+          <P id="p9" class="p_fm"></P>
 
     <select name="state" id="val_sta" class="sel_opt">
-            <option value="State" class="statefrm">State</option>
+            <option value="" class="statefrm">State</option>
     </select>
-    <p id="p32"></p>
+    <p id="p10" class="p_fm"></p>
     <select name="lga" id="lga" class="sel_opt">
       <option value="LGA">LGA</option>
-
     </select>
+    <P id="p11" class="p_fm"></P>
 <div class="addr">
   <textarea name="addr1" id="addr1" cols="50" rows="3" placeholder="Home Address 1"></textarea>
+  <P id="p12" class="p_fm"></P>
 </div>
 <div class="addr">
   <textarea name="addr2" id="addr2" cols="50" rows="3" placeholder="Home Address 2"></textarea>
+  <P id="p13" class="p_fm"></P>
 </div>
   </div>
     
     <h3 class="hd_fm">D.O.B<span style="color: red;">*</span></h3>
-    <input type="date" name="dob">
+    <input type="date" name="dob" id="dobirth">
+    <P id="p14" class="p_fm"></P>
   </div>
   <h3 class="hd_fm">BG/GT<span style="color: red;">*</span></h3>
   <div class="form_1">
@@ -138,7 +145,7 @@
           <option value="SS">SS</option>
           <option value="AC">AC</option>
       </select>
-      <p id="p3" class="p_fm"></p>
+      <p id="p15" class="p_fm"></p>
 </div>
 <div class="inline_para">
   <select name="bg" id="bgfrm">
@@ -152,7 +159,7 @@
           <option value="AB+">AB+</option>
           <option value="AB-">AB-</option>
   </select>
-  <p id="p3" class="p_fm"></p>
+  <p id="p16" class="p_fm"></p>
 </div>
   <input type="text" id="randno" name="unique_id" hidden>
   </div>
